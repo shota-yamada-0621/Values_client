@@ -5,7 +5,7 @@ import { grey } from "@mui/material/colors";
 import Values from "../assets/images/Values.png";
 import LoginIcon from "@mui/icons-material/Login";
 
-function SignIn() {
+function SignUp() {
   return (
     <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
       <Box
@@ -34,7 +34,7 @@ function SignIn() {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <img src={Values} alt="Logo" style={{ maxWidth: "50%" }} />
         </div>
-        <FormLabel style={{ fontSize: "40px" }}>ログイン</FormLabel>
+        <FormLabel style={{ fontSize: "40px" }}>新規登録</FormLabel>
         <TextField
           style={{
             width: "500px",
@@ -44,10 +44,36 @@ function SignIn() {
           }}
           required
           id="outlined-userid-input"
-          label="社員ID"
+          label="社員IDを入力してください"
           type="text"
           autoComplete="current-password"
         ></TextField>
+        <TextField
+          style={{
+            width: "500px",
+          }}
+          InputLabelProps={{
+            style: { fontFamily: "Arial, sans-serif", fontSize: "18px" },
+          }}
+          required
+          id="outlined-userid-input"
+          label="氏名を入力してください"
+          type="text"
+          autoComplete="current-password"
+        ></TextField>        
+        <TextField
+          style={{
+            width: "500px",
+          }}
+          InputLabelProps={{
+            style: { fontFamily: "Arial, sans-serif", fontSize: "18px" },
+          }}
+          required
+          id="outlined-userid-input"
+          label="emailアドレスを入力してください"
+          type="email"
+          autoComplete="current-password"
+        ></TextField>        
         <TextField
           required
           style={{
@@ -57,13 +83,23 @@ function SignIn() {
             style: { fontFamily: "Arial, sans-serif", fontSize: "18px" },
           }}
           id="outlined-password-input"
-          label="Password"
+          label="Passwordを入力してください"
           type="Password"
           autoComplete="current-password"
         />
-        <Link style={{ fontSize: "3px", marginRight: "350px" }}>
-          パスワードをお忘れの方はこちら
-        </Link>
+        <TextField
+          required
+          style={{
+            width: "500px",
+          }}
+          InputLabelProps={{
+            style: { fontFamily: "Arial, sans-serif", fontSize: "18px" },
+          }}
+          id="outlined-password-input"
+          label="(確認用)Passwordを入力してください"
+          type="Password"
+          autoComplete="current-password"
+        />        
         <Button
           variant="contained"
           size="medium"
@@ -71,12 +107,11 @@ function SignIn() {
             width: "300px",
           }}
         >
-          ログイン
+          登録
         </Button>
-        <Link style={{ fontSize: "10px" }}>アカウントを作成する</Link>
       </Box>
     </div>
   );
 }
 
-export default SignIn;
+export default SignUp;
