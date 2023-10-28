@@ -12,7 +12,7 @@ function SignIn() {
         component="form"
         style={{
           background:
-            "linear-gradient(106.73deg, #FFE5B4 0.46%, #FFA500 100.87%)",
+            "linear-gradient(106.73deg, #B3E0FF 0.46%, #00DDDD 100.87%)",
           padding: "0 0 50px",
           alignItems: "center",
         }}
