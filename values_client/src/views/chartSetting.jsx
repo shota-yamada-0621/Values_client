@@ -7,97 +7,47 @@ import { grey } from "@mui/material/colors";
 const chartSetting = {
   xAxis: [
     {
-      label: 'rainfall (mm)',
+      label: '発生件数'
     },
   ],
   width: 500,
   height: 400,
 };
 const dataset = [
+    
   {
-    london: 59,
-    paris: 57,
-    newYork: 86,
-    seoul: 21,
-    month: 'Jan',
+    seoul: 1,
+    client: 'EPSON',
   },
   {
-    london: 50,
-    paris: 52,
-    newYork: 78,
     seoul: 28,
-    month: 'Fev',
+    client: '日本フェンオール',
   },
   {
-    london: 47,
-    paris: 53,
-    newYork: 106,
     seoul: 41,
-    month: 'Mar',
+    client: '日本コンラックス',
   },
   {
-    london: 54,
-    paris: 56,
-    newYork: 92,
     seoul: 73,
-    month: 'Apr',
+    client: '長野日本無線',
   },
   {
-    london: 57,
-    paris: 69,
-    newYork: 92,
     seoul: 99,
-    month: 'May',
+    client: 'VAIO',
   },
   {
-    london: 60,
-    paris: 63,
-    newYork: 103,
-    seoul: 144,
-    month: 'June',
-  },
-  {
-    london: 59,
-    paris: 60,
-    newYork: 105,
     seoul: 319,
-    month: 'July',
+    client: '象印マホービン',
   },
   {
-    london: 65,
-    paris: 60,
-    newYork: 106,
     seoul: 249,
-    month: 'Aug',
+    client: 'SB製作所',
   },
   {
-    london: 51,
-    paris: 51,
-    newYork: 95,
     seoul: 131,
-    month: 'Sept',
+    client: '東邦電機',
   },
-  {
-    london: 60,
-    paris: 65,
-    newYork: 97,
-    seoul: 55,
-    month: 'Oct',
-  },
-  {
-    london: 67,
-    paris: 64,
-    newYork: 76,
-    seoul: 48,
-    month: 'Nov',
-  },
-  {
-    london: 61,
-    paris: 70,
-    newYork: 103,
-    seoul: 25,
-    month: 'Dec',
-  },
+
 ];
 
 const valueFormatter = (value) => `${value}mm`;
@@ -111,6 +61,7 @@ export default function HorizontalBars() {
         "linear-gradient(106.73deg, #B3E0FF 0.46%, #00DDDD 100.87%)",
       padding: "0 0 50px",
       alignItems: "center",
+      margin: "0px 0px 0px 15px",
     }}
     sx={{
       display: "flex",
@@ -127,8 +78,8 @@ export default function HorizontalBars() {
   >
     <BarChart
       dataset={dataset}
-      yAxis={[{ scaleType: 'band', dataKey: 'month' }]}
-      series={[{ dataKey: 'seoul', label: 'Seoul rainfall', valueFormatter }]}
+      yAxis={[{ scaleType: 'band', dataKey: 'client' }]}
+      series={[{ dataKey: 'seoul', label: '客先別当月流出不良件数', valueFormatter }]}
       layout="horizontal"
       {...chartSetting}
     />

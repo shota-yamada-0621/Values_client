@@ -12,7 +12,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
+import CalculateIcon from '@mui/icons-material/Calculate';
+import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
+import SettingsIcon from '@mui/icons-material/Settings';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -22,6 +26,8 @@ import Cline from "./Cline";
 import SalesData from "./SalesData";
 import SalesChart from "./salesChart";
 import HorizontalBars from "./chartSetting";
+import BarAnimation from "./ClientData";
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -37,17 +43,47 @@ function ResponsiveDrawer(props) {
     <div>
       <Toolbar />
       <Divider />
-      <List>
-        {["総務", "生産管理", "品質管理", "製造", "設備"].map((text, index) => (
-          <ListItem key={text} disablePadding>
+      <List style={{background: "linear-gradient(106.73deg, #B3E0FF 0.46%, #00DDDD 100.87%)"}}>
+          <ListItem key={"総務"} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <CalculateIcon style={{color: "black", fontSize: "50px"}}/>
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={"総務"}primaryTypographyProps={{ style: { fontSize: '20px' } }}/>
             </ListItemButton>
           </ListItem>
-        ))}
+          <ListItem key={"生産管理"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <ChecklistRtlIcon style={{color: "orange", fontSize: "50px"}}/>
+              </ListItemIcon>
+              <ListItemText primary={"生産管理"}primaryTypographyProps={{ style: { fontSize: '20px' } }}/>
+            </ListItemButton>
+          </ListItem>
+          <ListItem key={"品質管理"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <AutoGraphIcon style={{color: "red", fontSize: "50px"}}/>
+              </ListItemIcon>
+              <ListItemText primary={"品質管理"}primaryTypographyProps={{ style: { fontSize: '20px' } }}/>
+            </ListItemButton>
+          </ListItem>
+          <ListItem key={"製造"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <SettingsIcon style={{color: "green", fontSize: "50px"}} />
+              </ListItemIcon>
+              <ListItemText primary={"製造"}primaryTypographyProps={{ style: { fontSize: '20px' } }}  />
+            </ListItemButton>
+          </ListItem>
+          <ListItem key={"設備"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <HomeWorkIcon style={{color: "blue", fontSize: "50px"}}/>
+              </ListItemIcon>
+              <ListItemText primary={"設備"}primaryTypographyProps={{ style: { fontSize: '20px' } }}/>
+            </ListItemButton>
+          </ListItem>
       </List>
     </div>
   );
@@ -56,7 +92,11 @@ function ResponsiveDrawer(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{
+        display: "flex",
+      }}
+    >
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -156,11 +196,12 @@ function ResponsiveDrawer(props) {
           }}
         >
           <SalesData />
-          <SalesChart/>
-          <HorizontalBars/>
+          <SalesChart />
+          <HorizontalBars />
         </Box>
-        <Box>
-          <h1>テスト</h1>
+        <Box
+        >
+          <BarAnimation />
         </Box>
       </Box>
       <Toolbar />

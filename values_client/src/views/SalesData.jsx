@@ -30,7 +30,7 @@ function SalesData() {
         borderColor="primary"
         autoComplete="off"
       >
-        <Typography>Aラインタスク達成状況</Typography>
+        <Typography>本日納品件数</Typography>
         <LineChart
       xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
       series={[
